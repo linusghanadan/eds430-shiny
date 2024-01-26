@@ -36,8 +36,8 @@ server <- function(input, output) {
   # render penguin histogram ----
   output$penguin_histogram_output <- renderPlot({
     
-    penguin_histogram_output <- ggplot(na.omit(penguins_filtered_df()), aes(x = flipper_length_mm, fill = species)) +
-    geom_histogram(alpha = 0.6, position = "identity", bins = 25) +
+    ggplot(na.omit(penguins_filtered_df()), aes(x = flipper_length_mm, fill = species)) +
+    geom_histogram(alpha = 0.6, position = "identity", bins = input$bin_number_input) +
     scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
     labs(x = "Flipper length (mm)", y = "Frequency",
          fill = "Penguin species") +

@@ -76,7 +76,7 @@ ui <- navbarPage(
                           # bin number sliderInput
                           sliderInput(inputId = "bin_number_input",
                                       label = "Select number of bins",
-                                      value = 25
+                                      value = 25,
                                       min = 1,
                                       max = 50)
                           
