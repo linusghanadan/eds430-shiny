@@ -4,6 +4,8 @@ library(tidyverse)
 library(palmerpenguins)
 library(lterdatasampler)
 library(shinyWidgets)
+library(shinycssloaders)
+library(markdown) # need if running in server
 
 #............custom ggplot theme (apply to both plots)...........
 myCustomTheme <- function() {

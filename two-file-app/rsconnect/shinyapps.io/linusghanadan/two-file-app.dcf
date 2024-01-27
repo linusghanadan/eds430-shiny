@@ -1,0 +1,10 @@
+name: two-file-app
+title:
+username: linusghanadan
+account: linusghanadan
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11046650
+bundleId: 8188429
+url: https://linusghanadan.shinyapps.io/two-file-app/
+version: 1

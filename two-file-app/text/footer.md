@@ -1,0 +1,1 @@
+*This app is maintained by [Linus Ghanadan](https://linusghanadan.github.io/) and is updated as needed for teaching purposes. Please report any issues [here]. Source code can be found on [GitHub].*
