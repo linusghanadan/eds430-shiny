@@ -16,10 +16,13 @@ sidebar <- dashboardSidebar(
     menuItem(text = "Dashboard", tabName = "dashboard", icon = icon("gauge"))
     
   ) # END sidebarMenu
+  
 )
 
 # dashboard body ----
 body <- dashboardBody(
+  
+  fresh::use_theme("dashboard-fresh-theme.css"),
   
   # tabItems ----
   tabItems(

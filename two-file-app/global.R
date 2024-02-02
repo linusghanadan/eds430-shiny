@@ -6,6 +6,14 @@ library(lterdatasampler)
 library(shinyWidgets)
 library(shinycssloaders)
 library(markdown) # need if running in server
+library(sass)
+
+# compile css ----
+sass(
+  input = sass_file("www/sass-styles.scss"),
+  output = "www/sass-styles.css",
+  options = sass_options(output_style = "compressed")
+)
 
 #............custom ggplot theme (apply to both plots)...........
 myCustomTheme <- function() {

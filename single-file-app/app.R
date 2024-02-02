@@ -3,13 +3,26 @@ library(shiny)
 library(palmerpenguins)
 library(tidyverse)
 library(DT)
+library(bslib)
+
+# Applies theme background color to plot
+thematic::thematic_shiny()
 
 # user interface ----
 ui <- fluidPage(
-
+  
+  theme = bs_theme(
+    
+    bg = "#a36f6f",
+    fg = "#FDF7f7",
+    primary = "#483132",
+    base_font = font_google("Pacifico")
+    
+  ),
+  
   # app title ----
   tags$h1("My App Title"),
-
+  
   # app subtitle (bolded) ----
   h4(strong("Exploring Antarctic Penguin Data")),
   
@@ -29,7 +42,7 @@ ui <- fluidPage(
   
   # DT output ----
   DT::dataTableOutput(outputId = "penguin_DT_output")
-
+  
 )
 
 # server ----
@@ -40,7 +53,7 @@ server <- function(input, output) {
     
     penguins %>% 
       filter(body_mass_g %in% c(input$body_mass_input[1]:input$body_mass_input[2]))
-  
+    
   })
   
   # render penguin scatter plot ----
@@ -65,7 +78,7 @@ server <- function(input, output) {
   # filter year
   year_df <- reactive({
     penguins %>% 
-    filter(year %in% c(input$year_input))
+      filter(year %in% c(input$year_input))
   })
   
   # render DT table ----
