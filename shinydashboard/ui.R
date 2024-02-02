@@ -33,7 +33,15 @@ body <- dashboardBody(
                    # background info box ----
                    box(width = NULL,
                        
-                       "Background info here"
+                       title = tagList(icon("water"),
+                                       strong("Monotoring Fish Creek Watershed")),
+                       includeMarkdown("text/intro.md"),
+                       tags$img(src = "FishCreekWatershedSiteMap_2020.jpeg",
+                                alt = "A map of Northern Alaska, showing Fish Creek Watershed",
+                                style = "max-width: 100%;"),
+                       tags$h6(tags$em("Map Source:", tags$a(href = "http://www.fishcreekwatershed.org/",
+                                                             "FCWO")),
+                               style = "text-align: center;")
                        
                    ) # END background info box
                    
@@ -48,7 +56,8 @@ body <- dashboardBody(
                      # citation box ----
                      box(width = NULL,
                          
-                         "CITATION"
+                         title = strong("Citation"),
+                         includeMarkdown("text/citation.md")
                          
                      ) # END citation box
                      
@@ -60,7 +69,8 @@ body <- dashboardBody(
                      # disclaimer box ----
                      box(width = NULL,
                          
-                         "disclaimer here"
+                         title = strong("Disclaimer"),
+                         includeMarkdown("text/disclaimer.md")
                          
                      ) # END disclaimer box
                      
@@ -122,7 +132,8 @@ body <- dashboardBody(
     ) # END dashboard tabItem
     
   ) # END tabItems
-)
-
-# combine all into a dashboard page ----
-dashboardPage(header, sidebar, body)
+  
+)  
+  # combine all into a dashboard page ----
+  dashboardPage(header, sidebar, body)
+  
